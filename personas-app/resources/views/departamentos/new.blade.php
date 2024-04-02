@@ -13,7 +13,7 @@
   <body>
     <div class="container">
         <h1>Add comuna</h1>  
-        <form method="POST" action="{{route('municipios.store')}}">
+        <form method="POST" action="{{route('departamentos.store')}}">
          @csrf
             <div class="mb-3">
               <label for="id" class="form-label">Code</label>
@@ -32,13 +32,14 @@
         <label for="municipality">municipality</label>
         <select class="form-select" id="municipality" name="code" required>
             <option selected disabled value="">Choose one...</option>
-            @foreach ($municipios as $municipio)
-            <option value="{{$municipio->muni_codi}}">{{$municipio->muni_nomb}}</option>
+            
+            @foreach ($departamentos as $departamento)
+            <option value="{{$departamento->depa_codi}}">{{$departamento->depa_nomb}}</option>
             @endforeach
          </select>
             <div class="mt-3">
            <button type="submit" class="btn btn-primary">Save</button>
-           <a href="{{route('municipios.index')}}" class="btn btn-warning">Volver</a>
+           <a href="{{route('departamentos.index')}}" class="btn btn-warning">Volver</a>
             </div>
           </form>
     </div>
